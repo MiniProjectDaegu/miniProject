@@ -1,24 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { useState, useEffect } from "react";
+import getData from "./api/getData";
+import MealService from "./MealService";
+import SchoolInfo from "./SchoolInfo";
+import styled from "styled-components";
+
+const Container = styled.div`
+  text-align: center;
+  font-size: 30px;
+`;
 
 function App() {
+  const [data, setData] = useState({});
+  const [query, setQuery] = useState("");
+  const [schoolCode, setSchoolCode] = useState(null);
+  useEffect(() => {
+    const fetch = async () => {
+      if (schoolCode === null) {
+        const data = await getData({ ATPT_OFCDC_SC_CODE: "C10" });
+      } else {
+        const data = await getData({
+          ATPT_OFCDC_SC_CODE: "C10",
+          SD_SCHUL_CODE: schoolCode,
+        });
+      }
+      setData(data);
+    };
+    fetch();
+  }, [query]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Container>
+        <SchoolInfo setQuery={setQuery}></SchoolInfo>
+        <MealService setQuery={setQuery}></MealService>
+      </Container>
+    </>
   );
 }
 

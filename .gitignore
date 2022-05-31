@@ -1,1 +1,4 @@
-/mini_pj/node_modules
+./mini_pj/node_modules
+node_modules/axios/lib/env/data.js
+
+/node_modules
