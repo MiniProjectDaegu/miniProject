@@ -11,29 +11,7 @@ import Home from "./Home";
 import Main from "./Main";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(
-  // <BrowserRouter>
-  //   <Routes>
-  //     <Route path="/" element={<Home />}></Route>
-  //     <Route path="/search" element={<Search />} />
-  //     <Route path="/view" element={<View />}>
-  //       <Route index path=":value" />
-  //     </Route>
-  //   </Routes>
-  // </BrowserRouter>
-
-  <BrowserRouter>
-    <Routes>
-      <Route path='/' element={<Main />}>
-        <Route index element={<Home />} />
-        <Route path='/search'>
-          <Route index element={<Search />} />
-        </Route>
-        <Route path='/view' element={<View />} />
-      </Route>
-    </Routes>
-  </BrowserRouter>
-);
+root.render(<App />);
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

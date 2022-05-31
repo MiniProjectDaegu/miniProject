@@ -5,6 +5,11 @@ import MealService from "./MealService";
 import SchoolInfo from "./SchoolInfo";
 import styled from "styled-components";
 import SchoolCode from "./component/SchoolCode";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Search from "./Search";
+import View from "./View";
+import Home from "./Home";
+import Main from "./Main";
 
 const Container = styled.div`
   text-align: center;
@@ -18,6 +23,7 @@ function App() {
   const [query, setQuery] = useState("");
   const [schoolCode, setSchoolCode] = useState(null);
   const [date, setDate] = useState(today);
+  const [schoolType, SetSchoolType] = useState("");
 
   // 나중에 맵함수로 데이터 뿌릴예정
   // SchoolCode();
@@ -42,12 +48,17 @@ function App() {
   }, [query]);
 
   return (
-    <>
-      <Container>
-        <SchoolInfo setQuery={setQuery}></SchoolInfo>
-        <MealService setQuery={setQuery} setDate={setDate}></MealService>
-      </Container>
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<Main />}>
+          <Route index element={<Home />} />
+          <Route path='/search'>
+            <Route index element={<Search />} />
+          </Route>
+          <Route path='/view' element={<View />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
