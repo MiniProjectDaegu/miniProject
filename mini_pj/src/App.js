@@ -52,7 +52,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Main />}>
           <Route index element={<Home />} />
-          <Route path='/search'>
+          <Route path=':schoolType'>
             <Route index element={<Search />} />
           </Route>
           <Route path='/view' element={<View />} />
