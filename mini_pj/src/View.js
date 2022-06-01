@@ -2,22 +2,24 @@ import React from "react";
 import { Link, useParams } from "react-router-dom";
 
 function View() {
+  //시도코드, 학교코드 받아서 api접근
+
   const day = ["월", "화", "수", "목", "금", "토", "일"];
   const { value } = useParams();
   console.log({ value });
   return (
     <div>
-      <Link to="/">
+      <Link to='/'>
         <div>HOME</div>
       </Link>
       <div></div>
-      <select name="month">
-        <option value="1월">1월</option>
-        <option value="2월">2월</option>
+      <select name='month'>
+        <option value='1월'>1월</option>
+        <option value='2월'>2월</option>
       </select>
-      <select name="list">
-        <option value="중식">중식</option>
-        <option value="석식">석식</option>
+      <select name='list'>
+        <option value='중식'>중식</option>
+        <option value='석식'>석식</option>
       </select>
       <table>
         <tr>
