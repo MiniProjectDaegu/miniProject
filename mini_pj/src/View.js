@@ -5,8 +5,6 @@ function View() {
   //시도코드, 학교코드 받아서 api접근
 
   const day = ["월", "화", "수", "목", "금", "토", "일"];
-  const { value } = useParams();
-  console.log({ value });
   return (
     <div>
       <Link to='/'>

@@ -54,8 +54,9 @@ function App() {
           <Route index element={<Home />} />
           <Route path=':schoolType'>
             <Route index element={<Search />} />
+            {/* <Route index element={<View />} /> */}
+            <Route path=':schoolName' element={<View />} />
           </Route>
-          <Route path='/view' element={<View />} />
         </Route>
       </Routes>
     </BrowserRouter>

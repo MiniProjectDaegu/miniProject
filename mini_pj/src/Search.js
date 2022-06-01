@@ -1,36 +1,52 @@
-import React, { useEffect, useRef, useState } from "react";
-import { Link, Outlet, useParams } from "react-router-dom";
+import React, { useEffect, useState, useRef } from "react";
+import { Link, Outlet, useParams, useSearchParams } from "react-router-dom";
 import { getATPTCode } from "./api/getATPTCode";
+import getData from "./api/getData";
+import getSchoolType from "./component/getSchoolType";
 
 function Search() {
   //useParams로 초,중,고 입력받음
-  const schoolType = useParams();
-  console.log(schoolType);
+  // ?? view 컴포넌트로 옮길 예정
+  // const schoolType = getSchoolType(useParams());
+  // console.log(schoolType);
   //시도코드 getATPTCode에서 받을예정
   const [ATPTCodeList, SetATPTCodeList] = useState([]);
-  console.log(ATPTCodeList);
+  const [ATPTCode, SetATPTCode] = useState("");
+  // const [schoolName, SetSchoolName] = useState(null);
+  const [searchparams, setSearchparams] = useSearchParams();
+  const inputRef = useRef("");
   useEffect(() => {
     const fetch = async () => {
       const data = await getATPTCode();
       SetATPTCodeList(data);
-      console.log(data);
     };
     fetch();
   }, []);
-
-  //시도코드,학교이름 입력받아서 api 접근후 학교코드 받기
-
-  // const { value } = useParams();
-  const inputref = useRef();
-  const data = () => {
-    console.log(inputref.current.value);
+  const getATPT = (event) => {
+    SetATPTCode(event.target.value);
   };
+  const onClick = () => {
+    // SetSchoolName(inputRef.current.value);
+    console.log(!!inputRef.current.value);
+    console.log(!!ATPTCode);
+    setSearchparams(
+      inputRef.current.value && ATPTCode
+        ? {
+            shcoolCode: ATPTCode,
+            schoolName: inputRef.current.value,
+          }
+        : {}
+    );
+  };
+  console.log(searchparams.get("학교이름"));
+  console.log(searchparams.get("shcoolCode"));
+  console.log();
 
   return (
     <div className='divcss'>
       <div className='search'>
-        <input type='text' placeholder='검색하세요' ref={inputref}></input>
-        <select name='city'>
+        <input type='text' placeholder='검색하세요' ref={inputRef}></input>
+        <select name='city' onChange={getATPT}>
           <option value=''>시/도</option>
           {ATPTCodeList.map((ATPTCode) => (
             <option
@@ -41,8 +57,8 @@ function Search() {
             </option>
           ))}
         </select>
-        <Link to='/view'>
-          <button onClick={data}>검색</button>
+        <Link to={`view?${searchparams}`}>
+          <button onClick={onClick}>검색</button>
         </Link>
       </div>
       {/* <Outlet></Outlet> */}
