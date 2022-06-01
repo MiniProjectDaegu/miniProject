@@ -17,9 +17,10 @@
   border-radius: 30px;
   width: 320px;
   height: 40px;
+  /* margin-top: 70px; */
 }
 
-select {
+.search_select {
   width: 320px;
   padding: 0.8em 0.5em;
   font-family: inherit;
@@ -35,4 +36,13 @@ select {
 
 select::-ms-expand {
   display: none;
+}
+
+.divcss {
+  /* height: 500px; */
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  /* flex-direction: column; */
+  margin-top: 300px;
 }

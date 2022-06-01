@@ -6,22 +6,14 @@ function View() {
   //시도코드, 학교코드 받아서 api접근
 
   const day = ["월", "화", "수", "목", "금", "토", "일"];
-  const { value } = useParams();
-  console.log({ value });
+
   return (
-    <div>
-      <Link to='/'>
-        <div>HOME</div>
-      </Link>
-      <div></div>
-      <select name='month'>
-        <option value='1월'>1월</option>
-        <option value='2월'>2월</option>
+    <div className="view_container">
+      <select className="view_month" name="month">
+        <option value="1월">1월</option>
+        <option value="2월">2월</option>
       </select>
-      <select name='list'>
-        <option value='중식'>중식</option>
-        <option value='석식'>석식</option>
-      </select>
+
       <table>
         <tr>
           {day.map((item, idx) => (
@@ -29,7 +21,7 @@ function View() {
           ))}
         </tr>
         <tr>
-          <td></td>
+          <td>고순조</td>
           <td></td>
           <td></td>
           <td></td>
@@ -47,6 +39,11 @@ function View() {
           <td></td>
         </tr>
       </table>
+      <select className="view_time" name="list">
+        <option value="조식">조식</option>
+        <option value="중식">중식</option>
+        <option value="석식">석식</option>
+      </select>
     </div>
   );
 }

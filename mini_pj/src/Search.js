@@ -17,7 +17,7 @@ function Search() {
   return (
     <div className="divcss">
       <div className="search">
-        <div>
+        <div className="search_select">
           <select name="city">
             <option value="daegu">대구</option>
             <option value="busan">부산</option>
