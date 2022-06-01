@@ -1,0 +1,29 @@
+.link_text {
+  text-decoration: none;
+  color: #ff4e7f;
+}
+
+.school_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ff4e7f;
+}
+
+.school_background {
+  /* background-color: rgb(239, 96, 137);
+  border: 1px solid pink;
+  width: 500px;
+  height: 500px;
+  border-radius: 10%; */
+  margin-top: 150px;
+  text-align: center;
+}
+
+.school_img {
+  width: 500px;
+  height: 500px;
+  border-radius: 30%;
+  border: 1px solid pink;
+  margin: 100px;
+}

@@ -1,5 +1,9 @@
 import React, { useEffect, useState, useRef } from "react";
 import { Link, Outlet, useParams, useSearchParams } from "react-router-dom";
+import React, { useEffect, useRef, useState } from "react";
+import { Link, Outlet, useParams } from "react-router-dom";
+
+import "./Search.css";
 import { getATPTCode } from "./api/getATPTCode";
 import getData from "./api/getData";
 import getSchoolType from "./component/getSchoolType";
@@ -45,20 +49,33 @@ function Search() {
   return (
     <div className='divcss'>
       <div className='search'>
-        <input type='text' placeholder='검색하세요' ref={inputRef}></input>
-        <select name='city' onChange={getATPT}>
-          <option value=''>시/도</option>
-          {ATPTCodeList.map((ATPTCode) => (
-            <option
-              key={ATPTCode.ATPT_OFCDC_SC_CODE}
-              value={ATPTCode.ATPT_OFCDC_SC_CODE}
-            >
-              {ATPTCode.ATPT_OFCDC_SC_NM}
-            </option>
-          ))}
-        </select>
-        <Link to={`view?${searchparams}`}>
-          <button onClick={onClick}>검색</button>
+        <div className='search_select'>
+          <select name='city' onChange={getATPT}>
+            <option value=''>시/도</option>
+            {ATPTCodeList.map((ATPTCode) => (
+              <option
+                key={ATPTCode.ATPT_OFCDC_SC_CODE}
+                value={ATPTCode.ATPT_OFCDC_SC_CODE}
+              >
+                {ATPTCode.ATPT_OFCDC_SC_NM}
+              </option>
+            ))}
+          </select>
+        </div>
+        <div>
+          <input
+            type='text'
+            className='searchForm'
+            placeholder='검색하세요'
+            ref={inputRef}
+          ></input>
+        </div>
+        <Link to={`/view${searchparams}`}>
+          <div>
+            <button className='searchBtn' onClick={onClick}>
+              검색
+            </button>
+          </div>
         </Link>
       </div>
       {/* <Outlet></Outlet> */}
