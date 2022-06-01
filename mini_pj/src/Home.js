@@ -11,6 +11,12 @@ function Home() {
         <Link to="/search">
           <img
             src="https://en.pimg.jp/038/426/713/1/38426713.jpg"
+            alt="초등학교"
+          />
+        </Link>
+        <Link to="/search">
+          <img
+            src="https://en.pimg.jp/038/426/713/1/38426713.jpg"
             alt="중학교"
           />
         </Link>

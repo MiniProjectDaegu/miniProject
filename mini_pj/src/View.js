@@ -1,5 +1,6 @@
 import React from "react";
 import { Link, useParams } from "react-router-dom";
+import "./View.css";
 
 function View() {
   const day = ["월", "화", "수", "목", "금", "토", "일"];
