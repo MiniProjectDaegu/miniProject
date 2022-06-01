@@ -2,6 +2,10 @@ import React, { useRef } from "react";
 import { Link, Outlet, useParams } from "react-router-dom";
 import "./Search.css";
 function Search() {
+  //useParams로 초,중,고 입력받음
+  //시도코드 getATPTCode에서 받을예정
+  //시도코드,학교이름 입력받아서 api 접근후 학교코드 받기
+
   //   const { value } = useParams();
   const inputref = useRef();
   const data = () => {

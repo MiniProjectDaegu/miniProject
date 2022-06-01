@@ -1,6 +1,6 @@
 import React from "react";
-import { Outlet, Link } from "react-router-dom";
-import Home from "./Home";
+import { Outlet } from "react-router-dom";
+// import Home from "./Home";
 function Main() {
   return (
     <>
