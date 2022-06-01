@@ -1,17 +1,29 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Link, Outlet, useParams } from "react-router-dom";
+import { getATPTCode } from "./api/getATPTCode";
 
 function Search() {
   //useParams로 초,중,고 입력받음
+  const schoolType = useParams();
+  console.log(schoolType);
   //시도코드 getATPTCode에서 받을예정
+  const [ATPTCodeList, SetATPTCodeList] = useState([]);
+  console.log(ATPTCodeList);
+  useEffect(() => {
+    const fetch = async () => {
+      const data = await getATPTCode();
+      SetATPTCodeList(data);
+      console.log(data);
+    };
+    fetch();
+  }, []);
+
   //시도코드,학교이름 입력받아서 api 접근후 학교코드 받기
 
-  //   const { value } = useParams();
+  // const { value } = useParams();
   const inputref = useRef();
   const data = () => {
     console.log(inputref.current.value);
-    // return <div>{value}</div>;
-    // console.log(inputref.current.value);
   };
 
   return (
@@ -19,8 +31,15 @@ function Search() {
       <div className='search'>
         <input type='text' placeholder='검색하세요' ref={inputref}></input>
         <select name='city'>
-          <option value='daegu'>대구</option>
-          <option value='busan'>부산</option>
+          <option value=''>시/도</option>
+          {ATPTCodeList.map((ATPTCode) => (
+            <option
+              key={ATPTCode.ATPT_OFCDC_SC_CODE}
+              value={ATPTCode.ATPT_OFCDC_SC_CODE}
+            >
+              {ATPTCode.ATPT_OFCDC_SC_NM}
+            </option>
+          ))}
         </select>
         <Link to='/view'>
           <button onClick={data}>검색</button>

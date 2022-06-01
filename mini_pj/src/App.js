@@ -28,24 +28,24 @@ function App() {
   // 나중에 맵함수로 데이터 뿌릴예정
   // SchoolCode();
 
-  useEffect(() => {
-    const fetch = async () => {
-      if (schoolCode === null) {
-        const data = await getData({
-          ATPT_OFCDC_SC_CODE: "B10",
-          SCHUL_KND_SC_NM: "고등학교",
-        });
-      } else {
-        const data = await getData({
-          ATPT_OFCDC_SC_CODE: "C10",
-          SD_SCHUL_CODE: schoolCode,
-          MLSV_YMD: date,
-        });
-      }
-      setData(data);
-    };
-    fetch();
-  }, [query]);
+  // useEffect(() => {
+  //   const fetch = async () => {
+  //     if (schoolCode === null) {
+  //       const data = await getData({
+  //         ATPT_OFCDC_SC_CODE: "B10",
+  //         SCHUL_KND_SC_NM: "고등학교",
+  //       });
+  //     } else {
+  //       const data = await getData({
+  //         ATPT_OFCDC_SC_CODE: "C10",
+  //         SD_SCHUL_CODE: schoolCode,
+  //         MLSV_YMD: date,
+  //       });
+  //     }
+  //     setData(data);
+  //   };
+  //   fetch();
+  // }, [query]);
 
   return (
     <BrowserRouter>
