@@ -34,7 +34,7 @@ const Calendar = ({ menu }) => {
         return (
          <td key={index} style={{ backgroundColor: "hotpink" }}>
           <div className="cal_day">{days.format("D")}</div>
-          <div>
+          <div style={{ fontSize: "2.8vh" }}>
            <TodayMenu index={days.format("D")} menu={menu} />
           </div>
          </td>
