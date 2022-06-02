@@ -4,10 +4,13 @@
 }
 
 .school_container {
+  width: 100vw;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   color: #ff4e7f;
+  font-size: 20px;
 }
 
 .school_background {
@@ -16,14 +19,56 @@
   width: 500px;
   height: 500px;
   border-radius: 10%; */
-  margin-top: 150px;
+  /* margin-top: 00px; */
   text-align: center;
 }
 
-.school_img {
+/* .school_img {
   width: 500px;
   height: 500px;
   border-radius: 30%;
   border: 1px solid pink;
   margin: 100px;
+} */
+
+.element_school_img {
+  width: 500px;
+  height: 500px;
+  border-radius: 30%;
+  margin: 100px;
+}
+.middle_school_img {
+  width: 500px;
+  height: 500px;
+  border-radius: 30%;
+  margin: 100px;
+}
+.high_school_img {
+  width: 500px;
+  height: 500px;
+  border-radius: 30%;
+  margin: 100px;
+}
+
+.element_school_img:hover {
+  width: 650px;
+  height: 650px;
+  border: 5px solid pink;
+}
+
+.middle_school_img:hover {
+  width: 650px;
+  height: 650px;
+  border: 5px solid pink;
+}
+
+.high_school_img:hover {
+  width: 650px;
+  height: 650px;
+  border: 5px solid pink;
+}
+
+.testdiv {
+  height: 1000px;
+  width: 1000px;
 }

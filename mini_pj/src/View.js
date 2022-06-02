@@ -9,41 +9,110 @@ function View() {
 
   return (
     <div className="view_container">
-      <select className="view_month" name="month">
-        <option value="1월">1월</option>
-        <option value="2월">2월</option>
-      </select>
-
-      <table>
-        <tr>
-          {day.map((item, idx) => (
-            <th key={item + idx}>{item}</th>
-          ))}
-        </tr>
-        <tr>
-          <td>고순조</td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-      </table>
-      <select className="view_time" name="list">
-        <option value="조식">조식</option>
-        <option value="중식">중식</option>
-        <option value="석식">석식</option>
-      </select>
+      <div className="view_select">
+        <select className="view_month" name="month">
+          <option value="1월">1월</option>
+          <option value="2월">2월</option>
+        </select>
+        <h1>오늘의 식단</h1>
+        <select className="view_time" name="list">
+          <option value="조식">조식</option>
+          <option value="중식">중식</option>
+          <option value="석식">석식</option>
+        </select>
+      </div>
+      <div className="view_div">
+        <img className="view_img" src="/sick.png"></img>
+        <table className="view_table">
+          <thead>
+            <tr>
+              <th>6월2일</th>
+            </tr>
+            <tr>
+              <th>목요일</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <li>고순조</li>
+                <li>명순조</li>
+                <li>된장국</li>
+              </td>
+            </tr>
+          </tbody>
+          {/* <thead>
+            <tr>
+              {day.map((item, idx) => (
+                <th key={item + idx}>{item}</th>
+              ))}
+            </tr>
+          </thead>
+          <thead>
+            <tr>
+              {day.map((item, idx) => (
+                <th key={item + idx}>{item}</th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+          </tbody>
+          <tbody>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+          </tbody>
+          <tbody>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+          </tbody>
+          <tbody>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+          </tbody>
+          <tbody>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+          </tbody> */}
+        </table>
+        <img className="view_img" src="/sick.png"></img>
+      </div>
     </div>
   );
 }

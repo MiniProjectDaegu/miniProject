@@ -15,32 +15,36 @@ function Search() {
   };
 
   return (
-    <div className="divcss">
-      <div className="search">
-        <div className="search_select">
-          <select name="city">
-            <option value="daegu">대구</option>
-            <option value="busan">부산</option>
-          </select>
-        </div>
-        <div>
-          <input
-            type="text"
-            className="searchForm"
-            placeholder="검색하세요"
-            ref={inputref}
-          ></input>
-        </div>
-        <Link to="/view">
-          <div>
-            <button className="searchBtn" onClick={data}>
-              검색
-            </button>
+    <body className="search_body">
+      <div className="divcss">
+        <div className="search">
+          <div className="ee">
+            <div className="search_select_main">
+              <select className="search_select" name="city">
+                <option value="daegu">대구</option>
+                <option value="busan">부산</option>
+              </select>
+            </div>
+            <div>
+              <input
+                type="text"
+                className="searchForm"
+                placeholder="검색하세요"
+                ref={inputref}
+              ></input>
+            </div>
+            <Link to="/view">
+              <div>
+                <button className="searchBtn" onClick={data}>
+                  검색
+                </button>
+              </div>
+            </Link>
           </div>
-        </Link>
+        </div>
+        {/* <Outlet></Outlet> */}
       </div>
-      {/* <Outlet></Outlet> */}
-    </div>
+    </body>
   );
 }
 

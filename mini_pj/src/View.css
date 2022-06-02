@@ -1,6 +1,6 @@
 table {
   margin-top: 200px;
-  width: 700px;
+  width: 400px;
   height: 200px;
   /* display: flex;
   flex-direction: column;
@@ -11,29 +11,37 @@ td {
   width: 200px;
   height: 100px;
   border: 1px solid black;
+  font-size: 50px;
 }
 
 th {
   width: 200px;
-  height: 50px;
+  height: 40px;
   border: 1px solid black;
-  background-color: hotpink;
+  background-color: #ff4e7f;
+  color: white;
+  font-size: 25px;
+}
+li {
+  margin: 20px;
+  margin-left: 100px;
 }
 
 .view_container {
-  display: flex;
-  /* align-content: center; */
+  /* display: flex; */
   align-items: center;
-  justify-content: center;
-  /* margin-top: 00px; */
-  width: 80%;
-  height: 800px;
-  border: 1px solid red;
-  background-color: pink;
+  width: 2500px;
+  height: 1000px;
+  /* border: 5px solid #ff4e7f; */
+  background-color: white;
+  margin: 0 auto;
+  /* justify-content: center; */
+  margin-top: 100px;
 }
 
 .view_month {
-  width: 120px;
+  width: 200px;
+  height: 70px;
   padding: 0.8em 0.5em;
   font-family: inherit;
   background: url(https://farm1.staticflickr.com/379/19928272501_4ef877c265_t.jpg)
@@ -44,10 +52,13 @@ th {
   border: 1px solid #999;
   border-radius: 20px;
   margin: 10px;
+  font-size: 20px;
 }
 
 .view_time {
-  width: 120px;
+  width: 200px;
+  height: 70px;
+
   padding: 0.8em 0.5em;
   font-family: inherit;
   background: url(https://farm1.staticflickr.com/379/19928272501_4ef877c265_t.jpg)
@@ -58,4 +69,35 @@ th {
   border: 1px solid #999;
   border-radius: 20px;
   margin: 10px;
+  font-size: 20px;
+}
+
+.view_select {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: space-evenly;
+  margin-top: 100px;
+  flex-direction: row;
+  /* margin-bottom: 50px; */
+}
+
+.view_table {
+  width: 1000px;
+  height: 700px;
+  /* display: flex; */
+  flex-direction: column;
+  justify-content: center;
+}
+
+.view_div {
+  height: auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.view_img {
+  width: 200px;
+  height: 200px;
 }

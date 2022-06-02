@@ -1,11 +1,15 @@
 header {
   background: linear-gradient(to top right, #ff4e7f, #ff4e7f 30%);
-  position: relative;
+  position: flex;
   left: 0;
   right: 0;
   top: 0;
   color: white;
   height: 150px;
+  width: 100vw;
+}
+body {
+  font-family: "bmh";
 }
 
 /* header {
@@ -20,7 +24,8 @@ header {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  margin-top: 25px;
+  /* margin-top: 25px; */
+  padding-top: 25px;
 }
 
 .header_title {
@@ -46,4 +51,14 @@ header {
   display: flex;
   /* justify-content: center; */
   align-items: center;
+}
+
+/* @font-face {
+  font-family: "JuaRegular";
+  src: url("./font/Jua-Regular.ttf");
+} */
+
+@font-face {
+  src: url("./font/BMHANNAAir_ttf.ttf");
+  font-family: "bmh";
 }
