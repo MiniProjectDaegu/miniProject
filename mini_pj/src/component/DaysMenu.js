@@ -1,4 +1,6 @@
 export function TodayMenu({ index, menu }) {
+ console.log(index);
+ console.log(menu);
  return (
   <div>
    {menu[index - 1].map((todayMenu, idx) => {

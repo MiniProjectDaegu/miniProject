@@ -18,12 +18,12 @@ const getData = async (paramObj) => {
   ...defaultParam,
   ...paramObj,
  }).toString();
- console.log(params);
  if (paramObj.SCHUL_KND_SC_NM) {
   url = `${BASE_URL}${schoolURL}?${params}`;
  } else {
   url = `${BASE_URL}${mealURL}?${params}`;
  }
+ console.log(url);
  const data = await requests(url);
  return data;
 };

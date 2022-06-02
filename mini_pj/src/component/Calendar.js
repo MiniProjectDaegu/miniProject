@@ -3,16 +3,18 @@ import { useRef, useState } from "react";
 import moment from "moment";
 import { TodayMenu, MonthMenu } from "./DaysMenu";
 
-const Calendar = ({ menu }) => {
- const todayRef = useRef();
- const [getMoment, setMoment] = useState(moment());
-
- const today = getMoment;
+const Calendar = ({ menu, date }) => {
+ //  const todayRef = useRef();
+ let todayRef = 0;
+ //  const [getMoment, setMoment] = useState(moment());
+ const today = moment(date);
  const firstWeek = today.clone().startOf("month").week();
  const lastWeek =
   today.clone().endOf("month").week() === 1
    ? 53
    : today.clone().endOf("month").week();
+ console.log(firstWeek);
+ console.log(lastWeek);
 
  const calendarArr = () => {
   let result = [];
@@ -30,7 +32,8 @@ const Calendar = ({ menu }) => {
         .startOf("week")
         .add(index, "day"); //d로해도되지만 직관성
        if (moment().format("YYYYMMDD") === days.format("YYYYMMDD")) {
-        todayRef.current = days.format("D");
+        // todayRef.current = days.format("D");
+        todayRef = days.format("D");
         return (
          <td key={index} style={{ backgroundColor: "hotpink" }}>
           <div className="cal_day">{days.format("D")}</div>
