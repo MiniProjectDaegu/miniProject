@@ -28,7 +28,6 @@ function Search() {
   SetATPTCode(event.target.value);
  };
  const onClick = () => {
-  setInputQuery(!inputQuery);
   SetSchoolName(inputRef.current.value);
   setSearchParams(
    inputRef.current.value && ATPTCode
@@ -39,7 +38,6 @@ function Search() {
     : {}
   );
  };
-
  useEffect(() => {
   const fetch = async () => {
    const data = await getData({
@@ -47,11 +45,11 @@ function Search() {
     SCHUL_NM: schoolName,
     SCHUL_KND_SC_NM: schoolType,
    });
+   setInputQuery(!!data.schoolInfo && !!ATPTCode);
    SetSchoolCode(data.schoolInfo[1].row[0].SD_SCHUL_CODE);
   };
   schoolName && fetch();
  }, [schoolName]);
-
  return inputQuery ? (
   <View searchParams={searchParams} schoolCode={schoolCode}></View>
  ) : (

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import Calendar1 from "./component/Calendar1";
+import Calendar1 from "./component/Calendar";
 import getData from "./api/getData";
 import dataProcessing from "./component/dataProcessing";
 import "./View.css";
@@ -12,9 +12,9 @@ const months = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 const day = ["월", "화", "수", "목", "금", "토", "일"];
 function View({ searchParams, schoolCode }) {
  const [date, setDate] = useState(today);
- const [mealCode, setMealCode] = useState("1");
+ const [mealCode, setMealCode] = useState(1);
  const [data, setData] = useState([]);
- const [menu, setMenu] = useState({});
+ const [menu, setMenu] = useState(null);
 
  const selectMonth = (event) => {
   let date = 0;
@@ -35,11 +35,11 @@ function View({ searchParams, schoolCode }) {
     MMEAL_SC_CODE: mealCode,
    });
    setData(data.mealServiceDietInfo[1]);
+   const finalData = dataProcessing(data.mealServiceDietInfo[1]);
+   data && setMenu(finalData);
   };
   schoolCode && fetch();
-  data && setMenu(dataProcessing(data));
  }, [mealCode]);
- console.log(menu);
  return (
   <div className="view_container">
    <div className="view_select">
@@ -55,7 +55,7 @@ function View({ searchParams, schoolCode }) {
     <select
      className="view_time"
      name="list"
-     onClick={(event) => {
+     onChange={(event) => {
       setMealCode(event.target.value);
      }}
     >
@@ -65,8 +65,7 @@ function View({ searchParams, schoolCode }) {
      <option value="3">석식</option>
     </select>
    </div>
-
-   <Calendar1 today={date} />
+   {menu ? <Calendar1 menu={menu} /> : <></>}
   </div>
  );
 }
