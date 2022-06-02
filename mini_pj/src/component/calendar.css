@@ -1,65 +1,15 @@
-.App {
-  text-align: center;
-}
-
-.lecture-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: 20px;
-  background-color: rgba(48, 44, 44, 0.534);
-  border-radius: 20px;
-}
-
-html,
-body {
-  height: 100%;
-}
-
-.App {
-  height: 100vh;
-  width: 100vw;
-  font-size: 1.5vh;
-  display: flex; /* display 설정해줘야 아래 flex로 해주면 direction 선택가능*/
-  flex-direction: column; /* 이건 세로순으로  태그들을 표시함 css*/
-  align-items: center; /* 이건 가로 중앙 css*/
-  justify-content: center; /* 이건 세로 중앙 css*/
-}
-
-.App .control {
-  display: flex;
-  flex-direction: row;
-}
-.App table {
-  display: flex;
-  width: 50vw;
-  height: 50vh;
-}
-.App table tbody {
-  display: flex;
-  width: 600px;
-  flex-direction: column;
-}
-.App tr {
-  display: flex;
-  flex-direction: row;
-}
-.App td {
-  display: flex;
-  flex-direction: column;
-  border: 1px solid black;
-  width: 10vw;
-  font-size: 13px;
+.cal_table {
+  margin: 0px;
   height: auto;
-  /* height: 200px; */
+  width: auto;
 }
-.App td span {
+
+.cal_img {
   display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
+  width: 120vw;
+  justify-content: space-around;
+  /* height: 40vh; */
 }
-.App td div {
-  display: flex;
+
+.cal_img img {
 }

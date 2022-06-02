@@ -6,7 +6,9 @@ function Main() {
   <>
    <header>
     <div className="header_container">
-     <img className="header_img" src="/logo_white.png"></img>
+     <Link to="">
+      <img className="header_img" src="/logo_white.png"></img>
+     </Link>
      <h1 className="header_title">오늘 뭐 나오지?</h1>
      <Link className="link_home" to="/">
       <div className="header_home">HOME</div>

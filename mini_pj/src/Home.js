@@ -1,11 +1,8 @@
-import React, { useRef } from "react";
-import { Link, Outlet } from "react-router-dom";
+import React from "react";
+import { Link } from "react-router-dom";
 import "./Home.css";
 
 function Home() {
- //params로 값전달
- const getValue = (e) => {};
-
  return (
   <>
    <div className="school_container">
@@ -16,7 +13,6 @@ function Home() {
         className="element_school_img"
         src="/element_school.jpg"
         alt="초등학교"
-        onClick={getValue}
        />
       </Link>
       <h1>초등학교</h1>
@@ -30,7 +26,6 @@ function Home() {
         className="middle_school_img"
         src="/middle_school.jpg"
         alt="중학교"
-        onClick={getValue}
        />
       </Link>
       <h1>중학교</h1>
@@ -42,7 +37,6 @@ function Home() {
       <Link className="link_text" to="/high">
        <img className="high_school_img" src="/high_school.jpg" alt="고등학교" />
       </Link>
-
       <h1>고등학교</h1>
      </div>
     </div>

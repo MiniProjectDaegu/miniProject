@@ -22,18 +22,33 @@ th {
 
 .view_container {
  display: flex;
+ height: auto;
+ width: auto;
  /* align-content: center; */
  align-items: center;
- justify-content: center;
+ justify-content: space-around;
+ flex-direction: column;
  /* margin-top: 00px; */
- width: 80%;
- height: 800px;
  border: 1px solid red;
- background-color: pink;
+}
+
+.view_select {
+ width: 100vw;
+ display: flex;
+ align-items: center;
+ justify-content: space-around;
+ margin-top: 10vh;
+ margin-bottom: 10vh;
+}
+.view_select span {
+ font-size: 40px;
+ font-weight: bold;
 }
 
 .view_month {
- width: 120px;
+ width: 5vw;
+ height: 5vh;
+ font-size: 20px;
  padding: 0.8em 0.5em;
  font-family: inherit;
  background: url(https://farm1.staticflickr.com/379/19928272501_4ef877c265_t.jpg)
@@ -47,7 +62,9 @@ th {
 }
 
 .view_time {
- width: 120px;
+ width: 5vw;
+ height: 5vh;
+ font-size: 20px;
  padding: 0.8em 0.5em;
  font-family: inherit;
  background: url(https://farm1.staticflickr.com/379/19928272501_4ef877c265_t.jpg)

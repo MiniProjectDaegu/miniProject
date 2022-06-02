@@ -42,29 +42,31 @@ function View({ searchParams, schoolCode }) {
  console.log(menu);
  return (
   <div className="view_container">
-   <select className="view_month" name="month" onChange={selectMonth}>
-    <option value="">월</option>
-    {months.map((month) => (
-     <option key={month} value={month}>
-      {month}
-     </option>
-    ))}
-   </select>
+   <div className="view_select">
+    <select className="view_month" name="month" onChange={selectMonth}>
+     <option value="">월</option>
+     {months.map((month) => (
+      <option key={month} value={month}>
+       {month}
+      </option>
+     ))}
+    </select>
+    <span>오늘의 식단</span>
+    <select
+     className="view_time"
+     name="list"
+     onClick={(event) => {
+      setMealCode(event.target.value);
+     }}
+    >
+     <option value="">분류</option>
+     <option value="1">조식</option>
+     <option value="2">중식</option>
+     <option value="3">석식</option>
+    </select>
+   </div>
 
    <Calendar1 today={date} />
-
-   <select
-    className="view_time"
-    name="list"
-    onClick={(event) => {
-     setMealCode(event.target.value);
-    }}
-   >
-    <option value="">분류</option>
-    <option value="1">조식</option>
-    <option value="2">중식</option>
-    <option value="3">석식</option>
-   </select>
   </div>
  );
 }

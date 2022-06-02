@@ -39,6 +39,7 @@ function Search() {
     : {}
   );
  };
+
  useEffect(() => {
   const fetch = async () => {
    const data = await getData({
