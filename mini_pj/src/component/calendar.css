@@ -1,0 +1,15 @@
+.cal_table {
+  margin: 0px;
+  height: auto;
+  width: auto;
+}
+
+.cal_img {
+  display: flex;
+  width: 120vw;
+  justify-content: space-around;
+  /* height: 40vh; */
+}
+
+.cal_img img {
+}
