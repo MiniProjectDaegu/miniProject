@@ -47,7 +47,7 @@ function View({ searchParams, schoolCode }) {
             </option>
           ))}
         </select>
-        <h1>오늘의 식단</h1>
+        <span>오늘의 식단</span>
         <select
           className="view_time"
           name="list"

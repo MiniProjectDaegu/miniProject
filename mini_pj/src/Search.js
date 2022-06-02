@@ -4,6 +4,7 @@ import { getATPTCode } from "./api/getATPTCode";
 import getData from "./api/getData";
 import getSchoolType from "./component/getSchoolType";
 import View from "./View";
+import "./Search.css";
 
 function Search() {
   //useParams로 초,중,고 입력받음
@@ -53,15 +54,12 @@ function Search() {
   return inputQuery ? (
     <View searchParams={searchParams} schoolCode={schoolCode}></View>
   ) : (
-    <body className="search_body">
+    <div className="search_body">
       <div className="divcss">
         <div className="search">
+          <img className="search_img" src="./sick.png"></img>
+
           <div className="search_select_main">
-            <input
-              type="text"
-              placeholder={`${schoolType}를 검색하세요`}
-              ref={inputRef}
-            ></input>
             <select className="search_select" name="city" onChange={getATPT}>
               <option value="">시/도</option>
               {ATPTCodeList.map((ATPTCode) => (
@@ -74,12 +72,22 @@ function Search() {
               ))}
             </select>
           </div>
-          <button className="searchBtn" onClick={onClick}>
-            검색
-          </button>
+          <div>
+            <input
+              className="searchForm"
+              type="text"
+              placeholder={`${schoolType}를 검색하세요`}
+              ref={inputRef}
+            ></input>
+          </div>
+          <div>
+            <button className="searchBtn" onClick={onClick}>
+              검색
+            </button>
+          </div>
         </div>
       </div>
-    </body>
+    </div>
   );
 }
 

@@ -71,4 +71,10 @@
 .testdiv {
   height: 1000px;
   width: 1000px;
+  font-size: 60px;
+  font-weight: bold;
+}
+
+.school_container h1 {
+  background-color: white;
 }

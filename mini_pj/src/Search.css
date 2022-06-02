@@ -1,8 +1,8 @@
 .search {
-  width: 600px;
-  height: 500px;
+  width: 900px;
+  height: 900px;
   background-color: white;
-
+  flex-direction: column;
   border-radius: 20%;
   display: flex;
   justify-content: center;
@@ -13,8 +13,10 @@
   padding: 5px 16px;
   border-radius: 30px;
   border: #555555 solid 4px;
-  width: 300px;
-  height: 30px;
+  width: 500px;
+  height: 80px;
+  font-size: 30px;
+  margin-bottom: 40px;
 }
 
 .searchBtn {
@@ -26,13 +28,17 @@
   background-color: #ff4e7f;
   color: white;
   border-radius: 30px;
-  width: 320px;
-  height: 40px;
+  width: 550px;
+  height: 80px;
+  font-size: 30px;
+  /* margin: 40px; */
   /* margin-top: 70px; */
 }
 
 .search_select {
-  width: 320px;
+  width: 530px;
+  height: 80px;
+  font-size: 27px;
   padding: 0.8em 0.5em;
   font-family: inherit;
   background: url(https://farm1.staticflickr.com/379/19928272501_4ef877c265_t.jpg)
@@ -42,8 +48,14 @@
   appearance: none;
   border: 1px solid #999;
   border-radius: 20px;
-  margin: 10px;
+  margin-bottom: 40px;
+  margin-top: 40px;
   /* color: white; */
+}
+
+.search_img {
+  margin-bottom: 30px;
+  width: 300px;
 }
 
 select::-ms-expand {
