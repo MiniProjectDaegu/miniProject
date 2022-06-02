@@ -58,6 +58,7 @@ function Search() {
   <div className="search_body">
    <div className="divcss">
     <div className="search">
+     <img className="search_img" src="./sick.png"></img>
      <div className="search_select_main">
       <select className="search_select" name="city" onChange={getATPT}>
        <option value="">시/도</option>
