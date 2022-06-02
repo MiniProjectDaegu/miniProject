@@ -1,4 +1,4 @@
 const MealService = ({ setQuery, query }) => {
-  return;
+ return;
 };
 export default MealService;
