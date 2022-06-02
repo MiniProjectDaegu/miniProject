@@ -1,26 +1,26 @@
 .link_text {
- text-decoration: none;
- color: #ff4e7f;
+  text-decoration: none;
+  color: #ff4e7f;
 }
 
 .school_container {
- width: 100vw;
- height: 100vh;
- display: flex;
- justify-content: center;
- align-items: center;
- color: #ff4e7f;
- font-size: 20px;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ff4e7f;
+  font-size: 20px;
 }
 
 .school_background {
- /* background-color: rgb(239, 96, 137);
+  /* background-color: rgb(239, 96, 137);
   border: 1px solid pink;
   width: 500px;
   height: 500px;
   border-radius: 10%; */
- /* margin-top: 00px; */
- text-align: center;
+  /* margin-top: 00px; */
+  text-align: center;
 }
 
 /* .school_img {
@@ -32,49 +32,49 @@
 } */
 
 .element_school_img {
- width: 500px;
- height: 500px;
- border-radius: 30%;
- margin: 100px;
+  width: 20vw;
+  height: 35vh;
+  border-radius: 30%;
+  margin: 100px;
 }
 .middle_school_img {
- width: 500px;
- height: 500px;
- border-radius: 30%;
- margin: 100px;
+  width: 20vw;
+  height: 35vh;
+  border-radius: 30%;
+  margin: 100px;
 }
 .high_school_img {
- width: 500px;
- height: 500px;
- border-radius: 30%;
- margin: 100px;
+  width: 20vw;
+  height: 35vh;
+  border-radius: 30%;
+  margin: 100px;
 }
 
 .element_school_img:hover {
- width: 650px;
- height: 650px;
- border: 5px solid pink;
+  width: 650px;
+  height: 650px;
+  border: 5px solid pink;
 }
 
 .middle_school_img:hover {
- width: 650px;
- height: 650px;
- border: 5px solid pink;
+  width: 650px;
+  height: 650px;
+  border: 5px solid pink;
 }
 
 .high_school_img:hover {
- width: 650px;
- height: 650px;
- border: 5px solid pink;
+  width: 650px;
+  height: 650px;
+  border: 5px solid pink;
 }
 
 .testdiv {
- height: 1000px;
- width: 1000px;
- font-size: 60px;
- font-weight: bold;
+  height: auto;
+  width: auto;
+  font-size: 60px;
+  font-weight: bold;
 }
 
 .school_container h1 {
- background-color: white;
+  background-color: white;
 }
