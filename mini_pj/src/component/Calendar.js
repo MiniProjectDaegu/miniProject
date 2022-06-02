@@ -32,8 +32,8 @@ const Calendar = ({ menu }) => {
        if (moment().format("YYYYMMDD") === days.format("YYYYMMDD")) {
         todayRef.current = days.format("D");
         return (
-         <td key={index} style={{ backgroundColor: "red" }}>
-          <div>{days.format("D")}</div>
+         <td key={index} style={{ backgroundColor: "hotpink" }}>
+          <div className="cal_day">{days.format("D")}</div>
           <div>
            <TodayMenu index={days.format("D")} menu={menu} />
           </div>
@@ -41,14 +41,14 @@ const Calendar = ({ menu }) => {
         );
        } else if (days.format("MM") !== today.format("MM")) {
         return (
-         <td key={index} style={{ backgroundColor: "gray" }}>
-          <span>{days.format("D")}</span>
+         <td key={index} style={{ backgroundColor: "#FFF56E" }}>
+          <span className="cal_day">{days.format("D")}</span>
          </td>
         );
        } else {
         return (
          <td key={index}>
-          <span>{days.format("D")}</span>
+          <span className="cal_day">{days.format("D")}</span>
           <MonthMenu index={days.format("D")} menu={menu}></MonthMenu>
          </td>
         );
@@ -60,13 +60,23 @@ const Calendar = ({ menu }) => {
   return result;
  };
 
+ const day = ["일", "월", "화", "수", "목", "금", "토"];
+
  return (
-  <div className="cal_img">
-   <img src="/run.png"></img>
+  <div className="cal">
+   <img className="cal_left_img" src="/run.png"></img>
    <table className="cal_table">
+    <thead>
+     <tr>
+      <th colSpan="7">영광고등학교</th>
+     </tr>
+     <tr>
+      <th>영광고등학교</th>
+     </tr>
+    </thead>
     <tbody>{calendarArr()}</tbody>
    </table>
-   <img src="/run.png"></img>
+   <img className="cal_right_img" src="/sick.png"></img>
   </div>
  );
 };
