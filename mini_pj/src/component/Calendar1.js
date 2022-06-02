@@ -33,12 +33,6 @@ const Calendar1 = () => {
                   <td key={index} style={{ backgroundColor: "red" }}>
                     <div>{days.format("D")}</div>
                     <div>asd</div>
-                    <div>asdsadsa</div>
-                    <div>asdsadsa</div>
-                    <div>asdsadsa</div>
-                    <div>asdsadsa</div>
-                    <div>asdsadsa</div>
-                    <div>asdsadsa</div>
                   </td>
                 );
               } else if (days.format("MM") !== today.format("MM")) {
@@ -62,8 +56,8 @@ const Calendar1 = () => {
   };
 
   return (
-    <div className="App">
-      <div className="control">
+    <div className='App'>
+      <div className='control'>
         <button
           onClick={() => {
             setMoment(getMoment.clone().subtract(1, "month"));
