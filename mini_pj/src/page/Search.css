@@ -1,89 +1,76 @@
 .search {
- width: 900px;
- height: 900px;
- background-color: white;
- flex-direction: column;
- border-radius: 20%;
- display: flex;
- justify-content: center;
- align-items: center;
+  width: 25vw;
+  height: 50vh;
+  background-color: white;
+  flex-direction: column;
+  border-radius: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .searchForm {
- padding: 5px 16px;
- border-radius: 30px;
- border: #555555 solid 4px;
- width: 500px;
- height: 80px;
- font-size: 30px;
- margin-bottom: 40px;
+  padding: 5px 16px;
+  border-radius: 30px;
+  border: #555555 solid 4px;
+  width: 11vw;
+  height: 2vh;
+  font-size: 1vh;
+  margin-bottom: 1vh;
 }
 
 .searchBtn {
- cursor: pointer;
- font-weight: bolder;
- font-size: 15px;
- border: 0;
- margin: 10px;
- background-color: #ff4e7f;
- color: white;
- border-radius: 30px;
- width: 550px;
- height: 80px;
- font-size: 30px;
- /* margin: 40px; */
- /* margin-top: 70px; */
+  cursor: pointer;
+  font-weight: bolder;
+  font-size: 1vh;
+  border: 0;
+  margin: 10px;
+  background-color: #ff4e7f;
+  color: white;
+  border-radius: 30px;
+  width: 14vw;
+  height: 3vh;
+  font-size: 1vh;
 }
 
 .search_select {
- width: 530px;
- height: 80px;
- font-size: 27px;
- padding: 0.8em 0.5em;
- font-family: inherit;
- background: url(https://farm1.staticflickr.com/379/19928272501_4ef877c265_t.jpg)
-  no-repeat 95% 50%;
- -webkit-appearance: none;
- -moz-appearance: none;
- appearance: none;
- border: 1px solid #999;
- border-radius: 20px;
- margin-bottom: 40px;
- margin-top: 40px;
- /* color: white; */
+  width: 13vw;
+  height: 4vh;
+  font-size: 1.2vh;
+  padding: 0.8em 0.5em;
+  font-family: inherit;
+  background: url(https://farm1.staticflickr.com/379/19928272501_4ef877c265_t.jpg)
+    no-repeat 95% 50%;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 1px solid #999;
+  border-radius: 2s0px;
+  margin-bottom: 2vh;
+  margin-top: 5vh;
+  /* color: white; */
 }
 
 .search_img {
- margin-bottom: 30px;
- width: 300px;
+  /* margin-bottom: 30px; */
+  width: 10vw;
 }
 
 select::-ms-expand {
- display: none;
+  display: none;
 }
 
 .divcss {
- height: 100vh;
- display: flex;
- /* background-color: #555555; */
- justify-content: center;
- align-items: center;
- /* background-color: #ffffff; */
- /* background-color: rgba(255, 255, 255, 0.5); */
- /* flex-direction: column; */
- /* margin-top: 300px; */
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .search_body {
- width: 100vw;
- height: 100vh;
- background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-  url("https://littledeep.com/wp-content/uploads/2020/03/littledeep_school_style2.png");
- /* url("https://littledeep.com/wp-content/uploads/2020/03/littledeep_school_style2.png"); */
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url("https://littledeep.com/wp-content/uploads/2020/03/littledeep_school_style2.png");
+  background-size: scale-down;
 }
-
-/* .ee {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-} */

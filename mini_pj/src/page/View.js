@@ -26,12 +26,12 @@ function View({ searchParams, schoolCode }) {
    const finalData = dataProcessing(data.mealServiceDietInfo, date);
    data && setMenu(finalData);
   };
-  schoolCode && fetch();
  }, [mealCode, date]);
 
  return (
   <div className="view_container">
    <div className="view_select">
+    <img className="cal_left_img" src="/run.png"></img>
     <MonthSelect months={months} setDate={setDate}></MonthSelect>
     <span>오늘의 식단</span>
     <select
@@ -45,6 +45,7 @@ function View({ searchParams, schoolCode }) {
      <option value="3">석식</option>
      <option value="1">조식</option>
     </select>
+    <img className="cal_right_img" src="/sick.png"></img>
    </div>
    {JSON.stringify(menu) !== "{}" ? (
     <Calendar menu={menu} date={date} schoolName={schoolName} />

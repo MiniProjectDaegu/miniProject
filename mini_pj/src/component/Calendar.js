@@ -34,14 +34,14 @@ const Calendar = ({ menu, date, schoolName }) => {
         return (
          <td key={index} style={{ backgroundColor: "hotpink" }}>
           <div className="cal_day">{days.format("D")}</div>
-          <div style={{ fontSize: "1.3vw" }}>
+          <div style={{ fontSize: "1vw" }}>
            <TodayMenu index={days.format("D")} menu={menu} />
           </div>
          </td>
         );
        } else if (days.format("MM") !== today.format("MM")) {
         return (
-         <td key={index} style={{ backgroundColor: "#FFF56E" }}>
+         <td key={index} style={{ backgroundColor: "rgb(211, 187, 191)" }}>
           <span className="cal_day">{days.format("D")}</span>
          </td>
         );
@@ -64,11 +64,12 @@ const Calendar = ({ menu, date, schoolName }) => {
 
  return (
   <div className="cal">
-   <img className="cal_left_img" src="/run.png"></img>
    <table className="cal_table">
     <thead>
      <tr>
-      <th colSpan="7">{schoolName}</th>
+      <th colSpan="7" style={{ fontSize: "3.7vh" }}>
+       {schoolName}
+      </th>
      </tr>
      <tr>
       {days.map((day, idx) =>
@@ -84,7 +85,6 @@ const Calendar = ({ menu, date, schoolName }) => {
     </thead>
     <tbody>{calendarArr()}</tbody>
    </table>
-   <img className="cal_right_img" src="/sick.png"></img>
   </div>
  );
 };
