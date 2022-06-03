@@ -4,60 +4,41 @@ header {
 
  top: 0;
  color: white;
- height: 150px;
- width: 100vw;
+ height: 10vh;
+ width: 100%;
  font-weight: bold;
- /* margin-bottom: 100px; */
 }
 body {
  font-family: "bmh";
 }
 
-/* header {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  align-content: center;
-  align-items: center;
-  padding: 10px 20px;
-} */
-
 .header_container {
+ height: 10vh;
  display: flex;
  justify-content: space-around;
  align-items: center;
- /* margin-top: 25px; */
- padding-top: 25px;
 }
 
 .header_title {
- font-size: 60px;
+ font-size: 5vh;
 }
 
 .header_img {
- width: 100px;
+ width: 6vw;
  align-items: center;
- height: 100px;
- /* justify-content: center; */
 }
 
 .header_home {
- /* justify-content: center; */
  align-items: center;
- font-size: 40px;
+ font-size: 3vh;
 }
 
 .link_home {
  color: white;
  text-decoration: none;
  display: flex;
- /* justify-content: center; */
  align-items: center;
 }
-
-/* @font-face {
-  font-family: "JuaRegular";
-  src: url("./font/Jua-Regular.ttf");
-} */
 
 @font-face {
  src: url("./font/BMHANNAAir_ttf.ttf");
@@ -67,10 +48,9 @@ body {
 .main_footer {
  width: 100%;
  background-color: #ff4e7f;
- height: 100px;
+ height: 10vh;
  position: fixed;
  bottom: 0;
- /* margin-top: 100px; */
  font-size: 30px;
  color: white;
  display: flex;

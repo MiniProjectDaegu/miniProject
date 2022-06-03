@@ -21,6 +21,11 @@ th {
 }
 
 .view_container {
+ background: linear-gradient(
+  to bottom,
+  pink 30%,
+  rgba(216, 187, 190, 0.808) 70%
+ );
  display: flex;
  height: auto;
  width: auto;

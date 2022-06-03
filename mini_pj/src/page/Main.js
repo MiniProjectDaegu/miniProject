@@ -19,12 +19,10 @@ function Main() {
      </Link>
     </div>
    </header>
-   <div>
-    <Outlet />
-   </div>
+   <Outlet />
    <div className="main_footer">
     <div>
-     <FontAwesomeIcon icon={faSchool} size="2x" />
+     <FontAwesomeIcon icon={faSchool} style={{ fontSize: "3vh" }} />
     </div>
    </div>
   </>
