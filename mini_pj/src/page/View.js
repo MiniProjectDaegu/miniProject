@@ -1,29 +1,20 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
 import Calendar from "../component/Calendar";
 import getData from "../api/getData";
 import dataProcessing from "../component/dataProcessing";
 import "./View.css";
-import { getMonth } from "../component/getMonth";
+import { getMonth, formMonth } from "../component/getMonth";
+import MonthSelect from "../component/MonthSelect";
 let today = new Date();
 today = today.getFullYear() + ("0" + (today.getMonth() + 1)).slice(-2);
 function View({ searchParams, schoolCode }) {
- // const todayMonth = moment(today).format("M");
- const months = getMonth(today);
- console.log(parseInt(today) + 8);
  const schoolName = searchParams.get("schoolName");
+ const months = getMonth(today);
+
  const [date, setDate] = useState(today);
  const [mealCode, setMealCode] = useState(2);
  const [menu, setMenu] = useState({});
- const selectMonth = (event) => {
-  let date = 0;
-  if (event.target.value < 10) {
-   date = "20220" + event.target.value;
-  } else {
-   date = "2022" + event.target.value;
-  }
-  setDate(date);
- };
+
  useEffect(() => {
   const fetch = async () => {
    const data = await getData({
@@ -32,7 +23,6 @@ function View({ searchParams, schoolCode }) {
     MLSV_YMD: date,
     MMEAL_SC_CODE: mealCode,
    });
-
    const finalData = dataProcessing(data.mealServiceDietInfo, date);
    data && setMenu(finalData);
   };
@@ -42,13 +32,7 @@ function View({ searchParams, schoolCode }) {
  return (
   <div className="view_container">
    <div className="view_select">
-    <select className="view_month" name="month" onChange={selectMonth}>
-     {months.map((month) => (
-      <option key={month} value={month}>
-       {month}
-      </option>
-     ))}
-    </select>
+    <MonthSelect months={months} setDate={setDate}></MonthSelect>
     <span>오늘의 식단</span>
     <select
      className="view_time"

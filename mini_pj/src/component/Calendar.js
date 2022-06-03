@@ -1,10 +1,9 @@
 import "./calendar.css";
-import { useRef, useState } from "react";
 import moment from "moment";
 import { TodayMenu, MonthMenu } from "./DaysMenu";
 
 const Calendar = ({ menu, date, schoolName }) => {
- let todayRef = 0;
+ let todayMonth = 0;
  const today = moment(date);
  const firstWeek = today.clone().startOf("month").week();
  const lastWeek =
@@ -31,7 +30,7 @@ const Calendar = ({ menu, date, schoolName }) => {
         moment().format("YYYYMMDD") === days.format("YYYYMMDD") &&
         moment(date).format("MM") === days.format("MM")
        ) {
-        todayRef = days.format("D");
+        todayMonth = days.format("D");
         return (
          <td key={index} style={{ backgroundColor: "hotpink" }}>
           <div className="cal_day">{days.format("D")}</div>

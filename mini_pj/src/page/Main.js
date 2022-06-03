@@ -3,8 +3,6 @@ import { Link, Outlet } from "react-router-dom";
 import { faSchool } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-// import Home from "./Home";
-
 function Main() {
  return (
   <>
