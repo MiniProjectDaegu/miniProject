@@ -3,7 +3,7 @@ import Calendar from "../component/Calendar";
 import getData from "../api/getData";
 import dataProcessing from "../component/dataProcessing";
 import "./View.css";
-import { getMonth, formMonth } from "../component/getMonth";
+import { getMonth } from "../component/getMonth";
 import MonthSelect from "../component/MonthSelect";
 let today = new Date();
 today = today.getFullYear() + ("0" + (today.getMonth() + 1)).slice(-2);
@@ -26,6 +26,7 @@ function View({ searchParams, schoolCode }) {
    const finalData = dataProcessing(data.mealServiceDietInfo, date);
    data && setMenu(finalData);
   };
+  schoolCode && fetch();
  }, [mealCode, date]);
 
  return (
