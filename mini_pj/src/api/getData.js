@@ -18,7 +18,6 @@ const getData = async (paramObj) => {
   ...defaultParam,
   ...paramObj,
  }).toString();
- console.log(params);
  if (paramObj.SCHUL_KND_SC_NM) {
   url = `${BASE_URL}${schoolURL}?${params}`;
  } else {

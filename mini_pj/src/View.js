@@ -1,20 +1,17 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import Calendar1 from "./component/Calendar";
+import Calendar from "./component/Calendar";
 import getData from "./api/getData";
 import dataProcessing from "./component/dataProcessing";
 import "./View.css";
-
 let today = new Date();
 today = today.getFullYear() + ("0" + (today.getMonth() + 1)).slice(-2);
-
 const months = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
-const day = ["월", "화", "수", "목", "금", "토", "일"];
 function View({ searchParams, schoolCode }) {
+ const schoolName = searchParams.get("schoolName");
  const [date, setDate] = useState(today);
- const [mealCode, setMealCode] = useState(1);
- const [data, setData] = useState([]);
- const [menu, setMenu] = useState(null);
+ const [mealCode, setMealCode] = useState(2);
+ const [menu, setMenu] = useState({});
 
  const selectMonth = (event) => {
   let date = 0;
@@ -25,7 +22,6 @@ function View({ searchParams, schoolCode }) {
   }
   setDate(date);
  };
- //시도코드, 학교코드,날짜,식사타입 받아서 api접근
  useEffect(() => {
   const fetch = async () => {
    const data = await getData({
@@ -34,12 +30,13 @@ function View({ searchParams, schoolCode }) {
     MLSV_YMD: date,
     MMEAL_SC_CODE: mealCode,
    });
-   setData(data.mealServiceDietInfo[1]);
-   const finalData = dataProcessing(data.mealServiceDietInfo[1]);
+
+   const finalData = dataProcessing(data.mealServiceDietInfo, date);
    data && setMenu(finalData);
   };
   schoolCode && fetch();
- }, [mealCode]);
+ }, [mealCode, date]);
+
  return (
   <div className="view_container">
    <div className="view_select">
@@ -65,7 +62,11 @@ function View({ searchParams, schoolCode }) {
      <option value="3">석식</option>
     </select>
    </div>
-   {menu ? <Calendar1 menu={menu} /> : <></>}
+   {JSON.stringify(menu) !== "{}" ? (
+    <Calendar menu={menu} date={date} schoolName={schoolName} />
+   ) : (
+    <></>
+   )}
   </div>
  );
 }

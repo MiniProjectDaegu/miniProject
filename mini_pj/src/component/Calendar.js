@@ -3,11 +3,9 @@ import { useRef, useState } from "react";
 import moment from "moment";
 import { TodayMenu, MonthMenu } from "./DaysMenu";
 
-const Calendar = ({ menu }) => {
-  const todayRef = useRef();
-  const [getMoment, setMoment] = useState(moment());
-
-  const today = getMoment;
+const Calendar = ({ menu, date, schoolName }) => {
+  let todayRef = 0;
+  const today = moment(date);
   const firstWeek = today.clone().startOf("month").week();
   const lastWeek =
     today.clone().endOf("month").week() === 1
@@ -28,13 +26,16 @@ const Calendar = ({ menu }) => {
                 .startOf("year")
                 .week(week)
                 .startOf("week")
-                .add(index, "day"); //d로해도되지만 직관성
-              if (moment().format("YYYYMMDD") === days.format("YYYYMMDD")) {
-                todayRef.current = days.format("D");
+                .add(index, "day");
+              if (
+                moment().format("YYYYMMDD") === days.format("YYYYMMDD") &&
+                moment(date).format("MM") === days.format("MM")
+              ) {
+                todayRef = days.format("D");
                 return (
                   <td key={index} style={{ backgroundColor: "hotpink" }}>
                     <div className="cal_day">{days.format("D")}</div>
-                    <div>
+                    <div style={{ fontSize: "2.8vh" }}>
                       <TodayMenu index={days.format("D")} menu={menu} />
                     </div>
                   </td>
@@ -60,25 +61,31 @@ const Calendar = ({ menu }) => {
     return result;
   };
 
-  const day = ["일", "월", "화", "수", "목", "금", "토"];
+  const days = ["일", "월", "화", "수", "목", "금", "토"];
 
   return (
     <div className="cal">
-      {/* <img className="cal_left_img" src="/run.png"></img> */}
+      <img className="cal_left_img" src="/run.png"></img>
       <table className="cal_table">
         <thead>
-          {/* <tr>
-            <th colSpan="7">영광고등학교</th>
-          </tr> */}
           <tr>
-            {day.map((days) => (
-              <th>{days}</th>
-            ))}
+            <th colSpan="7">{schoolName}</th>
+          </tr>
+          <tr>
+            {days.map((day, idx) =>
+              day === "토" || day === "일" ? (
+                <th style={{ color: "gold" }} key={day + idx}>
+                  {day}
+                </th>
+              ) : (
+                <th key={day + idx}>{day}</th>
+              )
+            )}
           </tr>
         </thead>
         <tbody>{calendarArr()}</tbody>
       </table>
-      {/* <img className="cal_right_img" src="/sick.png"></img> */}
+      <img className="cal_right_img" src="/sick.png"></img>
     </div>
   );
 };

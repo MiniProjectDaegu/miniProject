@@ -7,7 +7,6 @@ import View from "./View";
 import "./Search.css";
 
 function Search() {
-  //useParams로 초,중,고 입력받음
   const schoolType = getSchoolType(useParams());
   const [ATPTCodeList, SetATPTCodeList] = useState([]);
   const [ATPTCode, SetATPTCode] = useState("");
@@ -16,7 +15,6 @@ function Search() {
   const [inputQuery, setInputQuery] = useState(false);
   const inputRef = useRef("");
   const [schoolCode, SetSchoolCode] = useState("");
-  //
   useEffect(() => {
     const fetch = async () => {
       const data = await getATPTCode();
@@ -46,9 +44,13 @@ function Search() {
         SCHUL_KND_SC_NM: schoolType,
       });
       setInputQuery(!!data.schoolInfo && !!ATPTCode);
-      SetSchoolCode(data.schoolInfo[1].row[0].SD_SCHUL_CODE);
+      try {
+        SetSchoolCode(data.schoolInfo[1].row[0].SD_SCHUL_CODE);
+      } catch (error) {
+        alert("정보 없음");
+        inputRef.current.value = "";
+      }
     };
-    schoolName && fetch();
   }, [schoolName]);
   return inputQuery ? (
     <View searchParams={searchParams} schoolCode={schoolCode}></View>
