@@ -23,7 +23,6 @@ const getData = async (paramObj) => {
  } else {
   url = `${BASE_URL}${mealURL}?${params}`;
  }
- console.log(url);
  const data = await requests(url);
  return data;
 };

@@ -3,18 +3,14 @@ import { useRef, useState } from "react";
 import moment from "moment";
 import { TodayMenu, MonthMenu } from "./DaysMenu";
 
-const Calendar = ({ menu, date }) => {
- //  const todayRef = useRef();
+const Calendar = ({ menu, date, schoolName }) => {
  let todayRef = 0;
- //  const [getMoment, setMoment] = useState(moment());
  const today = moment(date);
  const firstWeek = today.clone().startOf("month").week();
  const lastWeek =
   today.clone().endOf("month").week() === 1
    ? 53
    : today.clone().endOf("month").week();
- console.log(firstWeek);
- console.log(lastWeek);
 
  const calendarArr = () => {
   let result = [];
@@ -30,9 +26,11 @@ const Calendar = ({ menu, date }) => {
         .startOf("year")
         .week(week)
         .startOf("week")
-        .add(index, "day"); //d로해도되지만 직관성
-       if (moment().format("YYYYMMDD") === days.format("YYYYMMDD")) {
-        // todayRef.current = days.format("D");
+        .add(index, "day");
+       if (
+        moment().format("YYYYMMDD") === days.format("YYYYMMDD") &&
+        moment(date).format("MM") === days.format("MM")
+       ) {
         todayRef = days.format("D");
         return (
          <td key={index} style={{ backgroundColor: "hotpink" }}>
@@ -63,7 +61,7 @@ const Calendar = ({ menu, date }) => {
   return result;
  };
 
- const day = ["일", "월", "화", "수", "목", "금", "토"];
+ const days = ["일", "월", "화", "수", "목", "금", "토"];
 
  return (
   <div className="cal">
@@ -71,10 +69,18 @@ const Calendar = ({ menu, date }) => {
    <table className="cal_table">
     <thead>
      <tr>
-      <th colSpan="7">영광고등학교</th>
+      <th colSpan="7">{schoolName}</th>
      </tr>
      <tr>
-      <th>영광고등학교</th>
+      {days.map((day, idx) =>
+       day === "토" || day === "일" ? (
+        <th style={{ color: "gold" }} key={day + idx}>
+         {day}
+        </th>
+       ) : (
+        <th key={day + idx}>{day}</th>
+       )
+      )}
      </tr>
     </thead>
     <tbody>{calendarArr()}</tbody>
