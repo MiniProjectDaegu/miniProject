@@ -1,16 +1,16 @@
 header {
-  background: linear-gradient(to top right, #ff4e7f, #ff4e7f 30%);
-  position: fixed;
+ background: linear-gradient(to top right, #ff4e7f, #ff4e7f 30%);
+ position: fixed;
 
-  top: 0;
-  color: white;
-  height: 150px;
-  width: 100vw;
-  font-weight: bold;
-  margin-bottom: 100px;
+ top: 0;
+ color: white;
+ height: 150px;
+ width: 100vw;
+ font-weight: bold;
+ /* margin-bottom: 100px; */
 }
 body {
-  font-family: "bmh";
+ font-family: "bmh";
 }
 
 /* header {
@@ -22,36 +22,36 @@ body {
 } */
 
 .header_container {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  /* margin-top: 25px; */
-  padding-top: 25px;
+ display: flex;
+ justify-content: space-around;
+ align-items: center;
+ /* margin-top: 25px; */
+ padding-top: 25px;
 }
 
 .header_title {
-  font-size: 60px;
+ font-size: 60px;
 }
 
 .header_img {
-  width: 100px;
-  align-items: center;
-  height: 100px;
-  /* justify-content: center; */
+ width: 100px;
+ align-items: center;
+ height: 100px;
+ /* justify-content: center; */
 }
 
 .header_home {
-  /* justify-content: center; */
-  align-items: center;
-  font-size: 40px;
+ /* justify-content: center; */
+ align-items: center;
+ font-size: 40px;
 }
 
 .link_home {
-  color: white;
-  text-decoration: none;
-  display: flex;
-  /* justify-content: center; */
-  align-items: center;
+ color: white;
+ text-decoration: none;
+ display: flex;
+ /* justify-content: center; */
+ align-items: center;
 }
 
 /* @font-face {
@@ -60,21 +60,21 @@ body {
 } */
 
 @font-face {
-  src: url("./font/BMHANNAAir_ttf.ttf");
-  font-family: "bmh";
+ src: url("./font/BMHANNAAir_ttf.ttf");
+ font-family: "bmh";
 }
 
 .main_footer {
-  width: 100%;
-  background-color: #ff4e7f;
-  height: 100px;
-  position: fixed;
-  bottom: 0;
-  /* margin-top: 100px; */
-  font-size: 30px;
-  color: white;
-  display: flex;
-  align-items: center;
-  text-align: center;
-  justify-content: center;
+ width: 100%;
+ background-color: #ff4e7f;
+ height: 100px;
+ position: fixed;
+ bottom: 0;
+ /* margin-top: 100px; */
+ font-size: 30px;
+ color: white;
+ display: flex;
+ align-items: center;
+ text-align: center;
+ justify-content: center;
 }
