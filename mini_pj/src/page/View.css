@@ -2,9 +2,6 @@ table {
   margin-top: 200px;
   width: 700px;
   height: 200px;
-  /* display: flex;
-  flex-direction: column;
-  justify-content: center; */
 }
 
 td {
@@ -24,13 +21,11 @@ th {
   display: flex;
   height: auto;
   width: auto;
-  /* align-content: center; */
   align-items: center;
   justify-content: space-around;
   flex-direction: column;
   margin-top: 50px;
   margin-bottom: 200px;
-  /* border: 1px solid red; */
 }
 
 .view_select {
@@ -38,9 +33,6 @@ th {
   display: flex;
   align-items: center;
   justify-content: center;
-  /* margin-top: 6vh; */
-  /* margin-bottom: 10vh; */
-  /* margin-bottom: 7vh; */
 }
 .view_select span {
   font-size: 2.5vw;
@@ -61,7 +53,6 @@ th {
   appearance: none;
   border: 1px solid #999;
   border-radius: 20px;
-  /* margin: 10px; */
   margin-right: 100px;
 }
 
@@ -79,6 +70,5 @@ th {
   appearance: none;
   border: 1px solid #999;
   border-radius: 20px;
-  /* margin: 10px; */
   margin-left: 100px;
 }

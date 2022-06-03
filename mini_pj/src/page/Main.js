@@ -10,7 +10,7 @@ function Main() {
     <>
       <header>
         <div className="header_container">
-          <Link to="">
+          <Link to="/">
             <img className="header_img" src="/logo_white.png"></img>
           </Link>
           <h1 className="header_title">오늘 뭐 나오지?</h1>
@@ -19,12 +19,10 @@ function Main() {
           </Link>
         </div>
       </header>
-      <div>
-        <Outlet />
-      </div>
+      <Outlet />
       <div className="main_footer">
         <div>
-          <FontAwesomeIcon icon={faSchool} size="1x" />
+          <FontAwesomeIcon icon={faSchool} style={{ fontSize: "3vh" }} />
         </div>
       </div>
     </>
